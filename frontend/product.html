@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Maison</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Maison</a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav-shop-all">Shop All</a></li>
+                <li><a href="category.html?category=Clothing" data-i18n="nav-clothing">Clothing</a></li>
+                <li><a href="category.html?category=Accessories" data-i18n="nav-accessories">Accessories</a></li>
+                <li><a href="category.html?category=Home" data-i18n="nav-home">Home</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <button id="lang-btn" onclick="toggleLanguage()" class="icon-btn"
+                    style="font-size: 0.9rem; font-weight: bold;">EN</button>
+                <button id="curr-btn" onclick="toggleCurrency()" class="icon-btn"
+                    style="font-size: 0.9rem; font-weight: bold;">USD</button>
+                <a href="login.html" class="icon-btn"><i class="far fa-user"></i></a>
+                <a href="cart.html" class="icon-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <a href="#" id="breadcrumb-category">Category</a> / <span
+                    id="breadcrumb-name">Product Name</span>
+            </div>
+
+            <div class="product-details-container">
+                <!-- Product Image Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="main-img" src="" alt="Product Image">
+                    </div>
+                    <div class="thumbnail-list" id="thumbnail-list">
+                        <!-- Thumbnails will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-content">
+                    <span class="product-brand" id="product-brand">Brand</span>
+                    <h1 class="product-title" id="product-name">Product Name</h1>
+
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span id="review-count">(12 reviews)</span>
+                        </div>
+                        <div class="price" id="product-price">$0.00</div>
+                    </div>
+
+                    <p class="product-description" id="product-desc">
+                        Product description goes here.
+                    </p>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Size</label>
+                            <div class="size-selector">
+                                <button class="size-btn">S</button>
+                                <button class="size-btn active">M</button>
+                                <button class="size-btn">L</button>
+                                <button class="size-btn">XL</button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <div class="quantity-selector">
+                                <button onclick="decreaseQty()">-</button>
+                                <input type="number" id="qty" value="1" min="1" readonly>
+                                <button onclick="increaseQty()">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="add-to-cart-btn" class="btn btn-dark btn-lg">Add to Cart</button>
+                        <button class="btn btn-outline btn-icon"><i class="far fa-heart"></i></button>
+                    </div>
+
+                    <div class="product-extra-info">
+                        <div class="info-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $100</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div id="related-product-list" class="product-grid">
+                <!-- Related products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Maison</h3>
+                    <p data-i18n="footer-tagline">Timeless design for modern living.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-shop">Shop</h4>
+                    <a href="index.html" data-i18n="nav-shop-all">All Products</a>
+                    <a href="category.html?category=Clothing" data-i18n="nav-clothing">Clothing</a>
+                    <a href="category.html?category=Accessories" data-i18n="nav-accessories">Accessories</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-support">Support</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2024 Maison. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/localization.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product-details.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

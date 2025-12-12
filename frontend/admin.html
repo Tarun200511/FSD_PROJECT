@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - WishVipe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">WishVipe Admin</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 style="margin: 30px 0;">Dashboard</h2>
+
+        <div style="margin-bottom: 30px;">
+            <h3>Product Management</h3>
+            <button class="btn btn-primary" onclick="createProductHandler()">+ Create Product</button>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <thead>
+                    <tr style="background: #eee; text-align: left;">
+                        <th style="padding: 10px;">ID</th>
+                        <th style="padding: 10px;">Name</th>
+                        <th style="padding: 10px;">Price</th>
+                        <th style="padding: 10px;">Category</th>
+                        <th style="padding: 10px;">Brand</th>
+                        <th style="padding: 10px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-product-list">
+                    <!-- Products will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h3>Order Management</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <thead>
+                    <tr style="background: #eee; text-align: left;">
+                        <th style="padding: 10px;">ID</th>
+                        <th style="padding: 10px;">User</th>
+                        <th style="padding: 10px;">Date</th>
+                        <th style="padding: 10px;">Total</th>
+                        <th style="padding: 10px;">Paid</th>
+                        <th style="padding: 10px;">Delivered</th>
+                        <th style="padding: 10px;">Details</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-order-list">
+                    <!-- Orders will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

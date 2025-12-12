@@ -1,0 +1,124 @@
+/* Personality Page Styles */
+.personality-section {
+    padding: 60px 0 100px;
+    background: #fff;
+    min-height: 80vh;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sub-title {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: var(--light-text);
+    max-width: 500px;
+    margin: 0 auto 40px;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background: #fff;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.form-group select:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* Results Styles */
+.results-container {
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-header {
+    margin-bottom: 50px;
+}
+
+.results-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.reasoning-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}

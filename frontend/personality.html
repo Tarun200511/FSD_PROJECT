@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stylist - Maison</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/personality.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Maison</a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav-shop-all">Shop All</a></li>
+                <li><a href="category.html?category=Clothing" data-i18n="nav-clothing">Clothing</a></li>
+                <li><a href="category.html?category=Accessories" data-i18n="nav-accessories">Accessories</a></li>
+                <li><a href="personality.html" class="active" style="color: var(--primary-color); font-weight: 600;">AI
+                        Stylist</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn"><i class="fas fa-search"></i></button>
+                <button id="lang-btn" onclick="toggleLanguage()" class="icon-btn"
+                    style="font-size: 0.9rem; font-weight: bold;">EN</button>
+                <button id="curr-btn" onclick="toggleCurrency()" class="icon-btn"
+                    style="font-size: 0.9rem; font-weight: bold;">USD</button>
+                <a href="login.html" class="icon-btn"><i class="far fa-user"></i></a>
+                <a href="cart.html" class="icon-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Personality Form Section -->
+    <section class="personality-section">
+        <div class="container">
+            <div class="form-container" id="form-container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Personalized Fashion</span>
+                    <h1>Meet Your AI Stylist</h1>
+                    <p>Tell us a bit about yourself, and we'll curate the perfect look for you.</p>
+                </div>
+
+                <form id="personality-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Personality Type</label>
+                            <select id="personality" required>
+                                <option value="" disabled selected>Select your vibe</option>
+                                <option value="Introvert">Introvert</option>
+                                <option value="Extrovert">Extrovert</option>
+                                <option value="Ambivert">Ambivert</option>
+                                <option value="Creative">Creative</option>
+                                <option value="Professional">Professional</option>
+                                <option value="Sporty">Sporty</option>
+                                <option value="Minimalist">Minimalist</option>
+                                <option value="Luxury Lover">Luxury Lover</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Occasion</label>
+                            <select id="occasion" required>
+                                <option value="" disabled selected>Where are you going?</option>
+                                <option value="Casual">Casual Day Out</option>
+                                <option value="Office">Office / Work</option>
+                                <option value="Party">Party / Event</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Travel">Travel / Vacation</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Budget Range</label>
+                            <select id="budget" required>
+                                <option value="" disabled selected>Select budget</option>
+                                <option value="Low">Economy ($)</option>
+                                <option value="Medium">Standard ($$)</option>
+                                <option value="Premium">Premium ($$$)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age Group</label>
+                            <select id="ageGroup">
+                                <option value="Teen">Teen</option>
+                                <option value="20s">20s</option>
+                                <option value="30s">30s</option>
+                                <option value="40+">40+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark btn-block btn-lg">Get My Recommendations</button>
+                </form>
+            </div>
+
+            <!-- Results Section (Hidden initially) -->
+            <div id="results-container" class="results-container" style="display: none;">
+                <div class="results-header text-center">
+                    <span class="sub-title">Your Curated Look</span>
+                    <h2 id="style-profile-title">The Minimalist Edit</h2>
+                    <p id="style-reasoning" class="reasoning-text">Based on your introverted nature...</p>
+                    <button onclick="resetForm()" class="btn btn-outline btn-sm">Start Over</button>
+                </div>
+
+                <div id="recommendation-list" class="product-grid">
+                    <!-- Recommendations injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Maison</h3>
+                    <p data-i18n="footer-tagline">Timeless design for modern living.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-shop">Shop</h4>
+                    <a href="index.html" data-i18n="nav-shop-all">All Products</a>
+                    <a href="category.html?category=Clothing" data-i18n="nav-clothing">Clothing</a>
+                    <a href="category.html?category=Accessories" data-i18n="nav-accessories">Accessories</a>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer-support">Support</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer-copy">&copy; 2024 Maison. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/localization.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/personality.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>
